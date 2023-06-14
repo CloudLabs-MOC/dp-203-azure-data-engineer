@@ -378,7 +378,7 @@ Now that you've explored various ways to query files in the data lake by using S
     GROUP BY YEAR(OrderDate)
     ORDER BY OrderYear;
     ```
-4. In the **Results** pane, select **Chart** and view the chart that is created for you; which should be a line chart.
+4. In the **Results** pane, select **Chart** and view the chart that is created for you, which should be a line chart.
 
 5. Change the **Category column** to **OrderYear** so that the line chart shows the revenue trend over the three year period from 2019 to 2021:
 
