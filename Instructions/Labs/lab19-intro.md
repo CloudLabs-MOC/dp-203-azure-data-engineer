@@ -4,11 +4,11 @@
 
     ![](./images/g1.png)
    
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner.
 
    ![](./images/g2.png)
 
-1. You can start,stop and restart Virtual machines from the Resources tab 
+1. You can start,stop and restart Virtual machines from the **Resources** tab 
 
    ![](./images/g3.png)
    
