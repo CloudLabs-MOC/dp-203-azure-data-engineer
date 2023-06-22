@@ -226,4 +226,5 @@ Now you're ready to publish and run the pipeline.
 
 5. When the pipeline run has succeeded, on the **Data** page, use the **...** menu for the **dbo.DimProduct** table in your SQL database to run a query that selects the top 100 rows. The table should contain the data loaded by the pipeline.
    
+**You have successfully completed the lab**
 
