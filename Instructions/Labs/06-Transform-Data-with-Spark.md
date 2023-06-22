@@ -71,7 +71,7 @@ In this Task, you'll use a combination of a PowerShell script and an ARM templat
 
 13. Attach the notebook to your **sparkxxxxxxx** Spark pool.
 
-    >**Note**: If don't find the **Attach to** option, kindly collapse **Develop** pane to view **Attach to** option next to outline option.
+    >**Note**: If you don't find the **Attach to** option, kindly collapse the **Data** pane to view the **Attach to** option next to the outline option.
 
 14. Review the notes in the notebook and run the each code cells.
 
