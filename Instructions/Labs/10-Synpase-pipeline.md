@@ -6,7 +6,7 @@ In this exercise, you'll load data into a dedicated SQL Pool using a pipeline in
 
 You'll need an Azure Synapse Analytics workspace with access to data lake storage and a dedicated SQL pool hosting a relational data warehouse.
 
-In this exercise, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
+In this task, you'll use a combination of a PowerShell script and an ARM template to provision an Azure Synapse Analytics workspace.
 
 1. Use the **[\>_]** button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a ***PowerShell*** environment and click on **Create storage** if prompted. The Cloud Shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
