@@ -9,7 +9,7 @@
    ![](../Labs/images/envdetails.png "Lab Environment")
 
 ## Login to Azure Portal
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+1. In the JumpVM, click on **Azure portal** shortcut of Microsoft Edge browser which is created on desktop.
 
    ![](../Labs/images/azureportal_icon.png "Lab Environment")
    
