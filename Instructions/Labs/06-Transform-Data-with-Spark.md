@@ -4,7 +4,7 @@ Data *engineers* often use Spark notebooks as one of their preferred tools to pe
 
 ## Task 1: Provision an Azure Synapse Analytics workspace
 
-In this Task, you'll use a Spark notebook in Azure Synapse Analytics to transform data in files.
+In this task, you'll use a Spark notebook in Azure Synapse Analytics to transform data in files.
 
 You'll need an Azure Synapse Analytics workspace with access to data lake storage and a Spark pool.
 
