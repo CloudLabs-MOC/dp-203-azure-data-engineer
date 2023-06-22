@@ -12,7 +12,7 @@ In this Task, you'll use a combination of a PowerShell script and an ARM templat
 
 1. In Azure Portal, click on the **Cloud Shell** button **[\>_]** to the right of the search bar at the top of the page to create a new Cloud Shell, selecting a ***PowerShell*** environment and select **Create storage**. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
 
-    ![Azure portal with a cloud shell pane](./images/cloud-shell.png)
+    ![Azure portal with a cloud shell pane](./images/cloudshell.png)
 
 
 2. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the **&#8212;**, **&#9723;**, and **X** icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the [Azure Cloud Shell documentation](https://docs.microsoft.com/azure/cloud-shell/overview).
