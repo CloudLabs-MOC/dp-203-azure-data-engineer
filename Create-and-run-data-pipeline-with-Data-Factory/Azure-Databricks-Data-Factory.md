@@ -1,12 +1,9 @@
-# Hands-on Lab:Create and run Data Pipeline with Data Factory
+# Hands-on Lab : Create and run Data Pipeline with Data Factory
 
 You can use notebooks in Azure Databricks to perform data engineering tasks, such as processing data files and loading data into tables. When you need to orchestrate these tasks as part of a data engineering pipeline, you can use Azure Data Factory.
 
 This exercise should take approximately **40** minutes to complete.
 
-## Before you start
-
-You'll need an [Azure subscription](https://azure.microsoft.com/free) in which you have administrative-level access.
 
 ## Provision Azure resources
 
@@ -147,15 +144,5 @@ Now that you have created a linked service, you can use it in a pipeline to run 
 
 5. Note the **runOutput** value, which is the *path* variable to which the notebook saved the data.
 
-## Delete Azure Databricks resources
-
-Now you've finished exploring Azure Data Factory integration with Azure Databricks, you must delete the resources you've created to avoid unnecessary Azure costs and free up capacity in your subscription.
-
-1. Close the Azure Databricks workspace and Azure Data Factory studio browser tabs and return to the Azure portal.
-2. On the Azure portal, on the **Home** page, select **Resource groups**.
-3. Select the **dp203-*xxxxxxx*** resource group containing your Azure Databricks and Azure Data Factory workspace (not the managed resource group).
-4. At the top of the **Overview** page for your resource group, select **Delete resource group**.
-5. Enter the resource group name to confirm you want to delete it, and select **Delete**.
-
-    After a few minutes, your resource group and the managed workspace resource group associated with it will be deleted.
+You have successfully completed the lab.
 
