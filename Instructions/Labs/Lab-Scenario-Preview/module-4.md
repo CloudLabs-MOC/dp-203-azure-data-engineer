@@ -1,4 +1,4 @@
-# Lab Scenario Preview: Guided Lab: Build a Data Pipeline in Synapse Analytics
+# Lab Scenario Preview:Guided Lab : Build a Data Pipeline in Synapse Analytics
 
 ## Lab 4: Use Azure Synapse Link for SQL
 
