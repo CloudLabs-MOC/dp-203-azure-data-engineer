@@ -1,6 +1,6 @@
 # Build a Data Pipeline in Synapse Analytics
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 90 Minutes
 
 ## Overview
 
@@ -8,7 +8,7 @@ In this hands-on lab, you will build a data pipeline in Azure Synapse Analytics,
 
 ## Objective
 
-This lab is aimed at providing learners hands-on experience with Azure Synapse Analytics by building and debugging a data pipeline to integrate and transform data into a dedicated SQL pool. By the end of this lab, you will be able to:
+This lab is aimed at providing learners with hands-on experience with Azure Synapse Analytics by building and debugging a data pipeline to integrate and transform data into a dedicated SQL pool. By the end of this lab, you will be able to:
 
 - **Get started with Azure Synapse Analytics:** This hands-on exercise is designed to teach you the fundamentals of using Azure Synapse Analytics to manage data flows and perform transformations. Participants will set up an Azure Synapse Analytics workspace and begin leveraging its capabilities to integrate data into a data warehouse.
 
@@ -97,13 +97,9 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
     ![](./images/Sign-in-no.png)
 
-5. If **Action required** pop-up window appears, click on **Ask later**.
+6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe later" to skip the tour.
 
-   ![Ask Later](../Labs/images/ask-later-01.png)
-
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
-
-    ![](./images/Azure-cancel-tour.png)
+    ![](./images/update-a.png)
 
 ## Support Contact
  
