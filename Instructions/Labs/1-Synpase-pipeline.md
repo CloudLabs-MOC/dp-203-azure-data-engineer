@@ -28,7 +28,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
     ![Azure portal with a cloud shell pane](images/DA-image2.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the drop-down menu at the top left of the cloud shell pane to change it to **PowerShell**.
 
 1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
 
@@ -55,8 +55,6 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     ./setup.ps1
     ```
 
-1. If prompted, provided resource group already exists. Are you sure want to update it. Enter **Y** and press enter.
-
 1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
 1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
@@ -65,13 +63,17 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Data flows in Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) article in the Azure Synapse Analytics documentation.
 
+>**Note:** While the script is deploying, please make a note of your randomly generated suffix for your Azure resources.
+
+>![](images/update-b.png)
+
 ## Task 2: View source and destination data stores
 
-The source data for this exercise is a text file containing product data. The destination is a table in a dedicated SQL pool. Your goal is to create a pipeline that encapsulates a data flow in which the product data in the file is loaded into the table; inserting new products and updating existing ones.
+The source data for this exercise is a text file containing product data. The destination is a table in a dedicated SQL pool. Your goal is to create a pipeline that encapsulates a data flow in which the product data in the file is loaded into the table, inserting new products and updating existing ones.
 
 In this task, you will be verifying the data stores by checking the files using Synapse Studio
 
-1. After the script has completed, in the Azure portal, go to the **dp203-*xxxxxxx*** resource group that it created, and select your Synapse workspace.
+1. After the script has completed, in the Azure portal, go to the **dp203-xxxxxxx** resource group that it created, and select your Synapse workspace.
 
     ![](images/DA-image5-1.png)
 
@@ -83,13 +85,13 @@ In this task, you will be verifying the data stores by checking the files using 
 
     ![](images/DA-image7.png)
 
-4. On the **Manage (1)** page, on the **SQL pools (2)** tab, select the row for the **sql*xxxxxxx*** dedicated SQL pool and use its **&#9655; (3)** icon to start it; confirming that you want to resume it when prompted.
+4. On the **Manage (1)** page, on the **SQL pools (2)** tab, select the row for the **sqlxxxxxxx** dedicated SQL pool and use its **&#9655; (3)** icon to start it; confirming that you want to resume it when prompted.
 
     ![](images/DA-image8.png)
 
     - Resuming the pool can take a few minutes. You can use the **&#8635; Refresh** button to check its status periodically. The status will show as **Online** when it's ready. While you're waiting, continue with the steps below to view the source data.
 
-5. On the **Data (1)** page, view the **Linked (2)** tab and verify that your workspace includes a link to your **Azure Data Lake Storage Gen2 (3)** storage account, which should have a name similar to **synapse*xxxxxxx* (Primary - datalake*xxxxxxx*) (4)**.
+5. On the **Data (1)** page, view the **Linked (2)** tab and verify that your workspace includes a link to your **Azure Data Lake Storage Gen2 (3)** storage account, which should have a name similar to **synapsexxxxxxx (Primary - datalakexxxxxxx) (4)**.
 
    ![](images/DA-image9.png)
 
@@ -119,11 +121,11 @@ In this task, you will be verifying the data stores by checking the files using 
 
 ## Task 3: Implement a pipeline
 
-In this task, you will implement an Azure Synapse Analytics pipeline that contains a dataflow encapsulating the logic to ingest the data from the text file, lookup the surrogate **ProductKey** column for products that already exist in the database, and then insert or update rows in the table accordingly.
+In this task, you will implement an Azure Synapse Analytics pipeline that contains a dataflow encapsulating the logic to ingest the data from the text file, look up the surrogate **ProductKey** column for products that already exist in the database, and then insert or update rows in the table accordingly.
 
 ### Task 3.1: Create a pipeline with a data flow activity
 
-1. In Synapse Studio, select the **Integrate (1)** page. Then in the **+ (2)** menu select **Pipeline (3)** to create a new pipeline.
+1. In Synapse Studio, select the **Integrate (1)** page. Then, in the **+ (2)** menu select **Pipeline (3)** to create a new pipeline.
 
     ![](images/DA-image15.png)
 
@@ -142,7 +144,7 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
 5. On the **Settings** tab, at the bottom of the list of settings, expand **Staging (1)** and set the following staging settings:
 
-    - **Staging linked service**: Select the **synapse*xxxxxxx*-WorkspaceDefaultStorage (2)** linked service.
+    - **Staging linked service**: Select the **synapsexxxxxxx-WorkspaceDefaultStorage (2)** linked service.
 
     - **Staging storage folder**: Replace **container** to **files (3)** and replace **Directory** to **stage_products (4)**.
 
@@ -164,7 +166,7 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
     ![Screenshot of an empty data flow activity.](./images/DA-image22.png)
 
-    - Then configure the source settings as follows:
+    - Then configure the **source settings** as follows:
 
         - **Output stream name**: ProductsText
         - **Description**: Products text data
@@ -204,7 +206,7 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
         ![Screenshot of an empty data flow activity.](./images/DA-image28.png)
 
-3. Add a second source with the following properties:
+3. Add a **second source** with the following properties:
 
     ![Screenshot of an empty data flow activity.](./images/DA-image22.png)
 
@@ -263,7 +265,7 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
     ![Screenshot of a data flow with two sources and a lookup.](./images/DA-image31.png)
 
-2. Configure the Lookup settings as follows:
+2. Configure the **Lookup** settings as follows:
     - **Output stream name**: MatchedProducts
     - **Description**: Matched product data
     - **Primary stream**: ProductText
@@ -276,13 +278,13 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
     ![Screenshot of a data flow with two sources and a lookup.](./images/DA-image32.png)
 
-    >**Note**: The lookup returns a set of columns from *both* sources, essentially forming an outer join that matches the **ProductID** column in the text file to the **ProductAltKey** column in the data warehouse table. When a product with the alternate key already exists in the table, the dataset will include the values from both sources. When the product dos not already exist in the data warehouse, the dataset will contain NULL values for the table columns.
+    >**Note**: The lookup returns a set of columns from *both* sources, essentially forming an outer join that matches the **ProductID** column in the text file to the **ProductAltKey** column in the data warehouse table. When a product with the alternate key already exists in the table, the dataset will include the values from both sources. When the product does not already exist in the data warehouse, the dataset will contain NULL values for the table columns.
 
 ### Task 3.5: Add an Alter Row
 
 1. Select the **+** icon at the bottom right of the **MatchedProducts** Lookup and select **Alter Row**.
 
-2. Configure the alter row settings as follows:
+2. Configure the **alter row** settings as follows:
 
     - **Output stream name**: SetLoadAction
     - **Description**: Insert new, upsert existing
@@ -321,13 +323,13 @@ Then use the **Properties** button above the **Properties (2)** pane to hide it.
 
     ![Screenshot of a data flow with two sources, a lookup, an alter row, and a sink.](./images/dataflow-sink(1).png)
 
-    >**Note**: In the output column section if there is any extra column apart from the above mentioned column, kindly delete it.
+    >**Note**: In the output column section, if there is any extra column apart from the above-mentioned column, kindly delete it.
 
 ## Task 4: Debug the Data Flow
 
-In this task, you will be debugging the dataflow without publishing it..
+In this task, you will be debugging the dataflow without publishing it.
 
-1. At the top of the data flow designer, enabled **Data flow debug**. Review the default configuration and select **OK**, then wait for the debug cluster to start (which may take a few minutes).
+1. At the top of the data flow designer, enable **Data flow debug**. Review the default configuration and select **OK**, then wait for the debug cluster to start (which may take a few minutes).
 
    ![](images/labimg21.png)
 
@@ -347,13 +349,13 @@ In this task, you will be debugging the dataflow without publishing it..
 
 In this task, you will be publishing the pipeline as you have reviewed it and run it.
 
-1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets) and on **Publish all** pane click on **Publish**.
+1. Use the **Publish all** button to publish the pipeline (and any other unsaved assets), and in the **Publish all** pane, click on **Publish**.
 
    ![](images/labimg22.png)
 
 2. When publishing is complete, close the **LoadProductsData** data flow pane and return to the **Load Product Data** pipeline pane.
 
-3. At the top of the pipeline designer pane, select **Add trigger** menu, click **Trigger now**. Then select **OK** to confirm you want to run the pipeline.
+3. At the top of the pipeline designer pane, select the **Add trigger** menu, click **Trigger now**. Then select **OK** to confirm you want to run the pipeline.
 
     >**Note**: You can also create a trigger to run the pipeline at a scheduled time or in response to a specific event.
 

@@ -26,7 +26,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
     ![Azure portal with a cloud shell pane](images/DA-image2.png)
 
-    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
+    > **Note**: If you have previously created a cloud shell that uses a *Bash* environment, use the drop-down menu at the top left of the cloud shell pane to change it to ***PowerShell***.
 
 1. On Getting started window choose **Mount storage account(1)** then under Storage account subscription select your available **subscription (2)** from the dropdown and click on **Apply (3)**.
 
@@ -51,9 +51,6 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     cd dp-203-azure-data-engineer/Allfiles/labs/11
     ./setup.ps1
     ```
-
-1. If prompted, provided resource group already exists. Are you sure want to update it. Enter **Y** and press enter.
-
 1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
 1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
@@ -62,11 +59,15 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Data flows in Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) article in the Azure Synapse Analytics documentation.
 
+>**Note:** While the script is deploying, please make a note of your randomly generated suffix for your Azure resources.
+
+>![](./images/update-b.png)
+
 ## Task 2: Run a Spark notebook interactively
 
 Before automating a data transformation process with a notebook, it can be useful to run the notebook interactively in order to better understand the process you will later automate.
 
-In this task, you will be using synapse workspace to run the Spark Notebook interactively.
+In this task, you will be using the Synapse Workspace to run the Spark Notebook interactively.
 
 1. After the script has completed, in the Azure portal, go to the **dp203-xxxxxxx** resource group that it created, and select your Synapse workspace.
 
@@ -102,19 +103,19 @@ In this task, you will be using synapse workspace to run the Spark Notebook inte
     ![download notebook file from GitHub](./images/downloadt.png)
 
 
-9. Navigate back to the **Synapse Analytics** page. Then on **Develop (1)** page, click on the **+ (2)** > **Import (3)** option.
+9. Navigate back to the **Synapse Analytics** page. Then on the **Develop (1)** page, click on the **+ (2)** > **Import (3)** option.
 
     ![Spark Notebook import](./image/../images/DA-image43.png)
         
-10. Select the file you just downloaded. In the notebook toolbar, attach the notebook to your **spark*xxxxxxx*** Spark pool and then use the **&#9655; Run All** button to run all of the code cells in the notebook.
+10. Select the file you just downloaded. In the notebook toolbar, attach **(1)** the notebook to your **spark*xxxxxxx*** **(2)** Spark pool and then use the **&#9655; Run All** button to run all of the code cells in the notebook.
 
     ![Spark Notebook import](./image/../images/DA-image44.png)
 
-11. Review the notes in the notebook and run each code cells.
+11. Review the notes in the notebook and run each code cell.
 
     > **Note**: The Spark session may take a few minutes to start before the code cells can run. 
 
-12. Review the code the notebook contains, noting that it:
+12. Review the code in the notebook, noting that it:
     - Sets a variable to define a unique folder name.
     - Loads the CSV sales order data from the **/data** folder.
     - Transforms the data by splitting the customer name into multiple fields.
@@ -122,7 +123,7 @@ In this task, you will be using synapse workspace to run the Spark Notebook inte
 
 13. After all of the notebook cells have run, note the name of the folder in which the transformed data has been saved. Select **Publish** and select **Publish** again.
 
-14. Select **Data**, open **files** folder and view the root **files** folder. If necessary, in then **More** menu, select **Refresh** to see the new folder. Then open it to verify that it contains Parquet files.
+14. Select **Data**, open **files** folder and view the root **files** folder. If necessary, in the **More** menu, select **Refresh** to see the new folder. Then open it to verify that it contains Parquet files.
 
     ![Spark Notebook import](./image/../images/DA-image45.png)
 
@@ -140,7 +141,7 @@ In this task, you will be using synapse workspace to run the Spark Notebook inte
 
 ## Task 3: Run the notebook in a pipeline
 
-In this task, you will automate transformation process by encapsulating the notebook in a pipeline.
+In this task, you will automate the transformation process by encapsulating the notebook in a pipeline.
 
 ### Task 3.1: Create a parameters cell
 
@@ -160,7 +161,7 @@ In this task, you will automate transformation process by encapsulating the note
 
 ### Task 3.2: Create a pipeline
 
-1. In Synapse Studio, select the **Integrate** page. Then in the **+** menu select **Pipeline** to create a new pipeline.
+1. In Synapse Studio, select the **Integrate** page. Then, in the **+** menu select **Pipeline** to create a new pipeline.
 
 2. In the **Properties** pane for your new pipeline, change its name from **Pipeline1** to **Transform Sales Data**. Then use the **Properties** button above the **Properties** pane to hide it.
 
@@ -175,7 +176,7 @@ In this task, you will automate transformation process by encapsulating the note
     - **Base parameters**: Expand this section and click on **+New** and define a parameter with the following settings:
         - **Name**: folderName
         - **Type**: String
-        - **Value**: Select **Add dynamic content** and set the parameter value to the *Pipeline Run ID* system variable (`@pipeline().RunId`)
+        - **Value**: Select **Add dynamic content** and set the parameter value to the *Pipeline Run ID* **(2)** inside the system variable **(1)** and click **Ok (3)** (`@pipeline().RunId`)
 
             ![Screenshot of a pipeline containing a Notebook activity.](images/runt.png)
 

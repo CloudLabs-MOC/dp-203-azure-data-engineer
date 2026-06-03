@@ -1,6 +1,6 @@
 # Build a Data Pipeline in Synapse Analytics
 
-### Overall Estimated Duration: 60 Minutes
+### Overall Estimated Duration: 90 Minutes
 
 ## Overview
 
@@ -62,13 +62,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 ## Exploring Your Lab Resources
  
-To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+To better understand your lab resources and credentials, navigate to the **Environment** tab.
  
 ![Explore Lab Resources](../Labs/images/DA-image34.png)
  
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
 ![Use the Split Window Feature](../Labs/images/DA-image35.png)
  
@@ -101,13 +101,9 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
     ![](./images/Sign-in-no.png)
 
-5. If **Action required** pop-up window appears, click on **Ask later**.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe later" to skip the tour.
 
-   ![Ask Later](../Labs/images/ask-later-01.png)
-
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
-
-    ![](./images/Azure-cancel-tour.png)
+    ![](./images/update-a.png)
 
 ## Support Contact
  
