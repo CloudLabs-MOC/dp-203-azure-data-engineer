@@ -97,13 +97,9 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
     ![](./images/Sign-in-no.png)
 
-5. If **Action required** pop-up window appears, click on **Ask later**.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Maybe later" to skip the tour.
 
-   ![Ask Later](../Labs/images/ask-later-01.png)
-
-6. If a **Welcome to Microsoft Azure** pop-up window appears, simply click "Cancel" to skip the tour.
-
-    ![](./images/Azure-cancel-tour.png)
+    ![](./images/update-a.png)
 
 ## Support Contact
  
