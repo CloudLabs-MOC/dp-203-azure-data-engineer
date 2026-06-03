@@ -51,9 +51,6 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     cd dp-203-azure-data-engineer/Allfiles/labs/11
     ./setup.ps1
     ```
-
-1. If prompted, provided resource group already exists. Are you sure you want to update it? Enter **Y** and press enter.
-
 1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
 1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
