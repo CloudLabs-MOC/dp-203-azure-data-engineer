@@ -63,8 +63,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Data flows in Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) article in the Azure Synapse Analytics documentation.
 
 >**Note:** While the script is deploying, please make a note of your randomly generated suffix for your Azure resources.
-
-![](./images/update-b.png)
+>![](./images/update-b.png)
 
 ## Task 2: Run a Spark notebook interactively
 
