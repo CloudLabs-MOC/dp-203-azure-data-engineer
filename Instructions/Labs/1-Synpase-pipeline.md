@@ -55,8 +55,6 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     ./setup.ps1
     ```
 
-1. If prompted, provided resource group already exists. Are you sure you want to update it? Enter **Y** and press enter.
-
 1. If prompted, choose which subscription you want to use (this will only happen if you have access to multiple Azure subscriptions).
 
 1. When prompted, enter a suitable password to be set for your Azure Synapse SQL pool.
@@ -64,6 +62,10 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
     > **Note**: Be sure to remember this password!
 
 8. Wait for the script to complete - this typically takes around 10 minutes, but in some cases may take longer. While you're waiting, review the [Data flows in Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) article in the Azure Synapse Analytics documentation.
+
+>**Note:** While the script is deploying, please make a note of your randomly generated suffix for your Azure resources.
+
+>![](images/change-b.png)
 
 ## Task 2: View source and destination data stores
 
