@@ -65,7 +65,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
 >**Note:** While the script is deploying, please make a note of your randomly generated suffix for your Azure resources.
 
->![](images/change-b.png)
+>![](images/update-b.png)
 
 ## Task 2: View source and destination data stores
 
