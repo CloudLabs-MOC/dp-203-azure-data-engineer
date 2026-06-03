@@ -175,7 +175,7 @@ In this task, you will automate the transformation process by encapsulating the 
     - **Base parameters**: Expand this section and click on **+New** and define a parameter with the following settings:
         - **Name**: folderName
         - **Type**: String
-        - **Value**: Select **Add dynamic content** and set the parameter value to the *Pipeline Run ID***(2)** inside the system variable**(1)** and click **Ok (3) ** (`@pipeline().RunId`)
+        - **Value**: Select **Add dynamic content** and set the parameter value to the *Pipeline Run ID* **(2)** inside the system variable **(1)** and click **Ok (3)** (`@pipeline().RunId`)
 
             ![Screenshot of a pipeline containing a Notebook activity.](images/runt.png)
 
