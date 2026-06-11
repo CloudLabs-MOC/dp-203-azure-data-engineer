@@ -62,7 +62,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
     ```
     rm -r dp-203-azure-data-engineer -f
-    git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+    git clone -b guidedlabs-Azure-Databricks --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
     ```
 
     ![](./images/data-brick-gt-lab1-ex1-g7.png)
@@ -156,7 +156,7 @@ In this task, you will use the notebook feature in Azure Databricks, which uses 
 1. In the **LabVM**, download the following file and save it as **products.csv**.
 
     ```
-    https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Allfiles/labs/23/adventureworks/products.csv
+    https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs-Azure-Databricks/Allfiles/labs/23/adventureworks/products.csv
     ```
 
 1. In the **Explore products** notebook select **File (1)** and choose **Upload data to DBFS (2)**.
