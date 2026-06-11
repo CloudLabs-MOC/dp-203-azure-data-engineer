@@ -62,7 +62,7 @@ In this task, you'll use a script to provision a new Azure Databricks workspace.
 
    ```
    rm -r dp-203-azure-data-engineer -f
-   git clone -b guidedlabs --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
+   git clone -b guidedlabs-Azure-Databricks --single-branch https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer.git
    ```
 
    ![](./images/data-brick-gt-lab1-ex1-g7.png)
