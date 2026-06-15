@@ -24,7 +24,7 @@ In this task, you'll use a combination of a PowerShell script and an ARM templat
 
     ![Azure portal with a cloud shell pane](images/DA-image1.png)
 
-1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (Bash or PowerShell). If so, select PowerShell.
+1. The first time you open the Cloud Shell, you may be prompted to choose the type of shell you want to use (Bash or PowerShell). If so, select **PowerShell**.
 
     ![Azure portal with a cloud shell pane](images/DA-image2.png)
 

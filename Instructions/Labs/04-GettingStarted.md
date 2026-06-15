@@ -64,13 +64,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To better understand your lab resources and credentials, navigate to the **Environment** tab.
  
-![Explore Lab Resources](../Labs/images/DA-image34.png)
+![Explore Lab Resources](../Labs/images/change-2.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
-![Use the Split Window Feature](../Labs/images/DA-image35.png)
+![Use the Split Window Feature](../Labs/images/change-3.png)
  
 ## Managing Your Virtual Machine
  
@@ -91,11 +91,11 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
  
        ![Enter Your Username](../Labs/images/sc900-image-1.png)
  
-3. Next, provide your password:
+3. Next, provide your Temporary Access Pass and, click on Sign in:
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
-      ![Enter Your Password](../Labs/images/sc900-image-2.png)
+      ![Enter Your Password](../Labs/images/change-t.png)
  
 4. If prompted to stay signed in, you can click "No."
 
