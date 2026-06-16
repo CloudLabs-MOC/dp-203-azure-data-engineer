@@ -157,6 +157,10 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 
    ![](./images/data-brick-gt4-lab4-ex1-g9.png)
 
+1. If the **Attach an exisitng** window appears, review the **SQL warehouse** configuration and select **Attach and run** to proceed.
+
+   ![](./images/data-brick-gt4-lab4-ex1-g9-1.png)
+
 1. Verify the schema creation by confirming the **Table (1)** section shows *OK*, and then expand **adventureworks (2)** under **hive_metastore**.
 
    ![](./images/data-brick-gt4-lab4-ex1-g10.png)
@@ -177,15 +181,11 @@ In this task, you will create a table schema using an external file.
 
    ![](./images/data-brick-gt4-lab4-ex1-g11.png)
 
-1. In the Azure Databricks workspace portal, in the sidebar, select **+ New (1)** and then select **Add or upload data (2)**
+1. In the Azure Databricks portal, open the sidebar and select **Catalog (1)**. Then choose **Adventureworks (2)** and click **create (3) table (4)**.
 
     ![](./images/data-brick-gt4-lab4-ex1-g12.png)
 
-1. In order to upload the **products.csv** file, click on **Create or modify table**.
-
-   ![](./images/data-brick-gt4-lab4-ex1-g13.png)
-
-1. Then click on **browse** to upload the file that you have downloaded to your computer.
+1. Click **browse** and select the file you downloaded to the Lab VM.
 
    ![](./images/data-brick-gt4-lab4-ex1-g14.png)
 
@@ -193,11 +193,11 @@ In this task, you will create a table schema using an external file.
 
    ![](./images/data-brick-gt4-lab4-ex1-g15.png)
 
-1. Now the table named **products** has been created under **adventureworks** database, review the table details.
+1. The **products** table is now created in the **adventureworks** database. Review the table details to confirm the creation.
 
    ![](./images/data-brick-gt4-lab4-ex1-g16.png)
 
-The ability to create a table by importing data from a file makes it easy to populate a database. You can also use Spark SQL to create tables using code. The tables themselves are metadata definitions in the hive metastore, and the data they contain is stored in Delta format in Databricks File System (DBFS) storage.
+Creating a table by importing data from a file is a convenient way to populate a database. Alternatively, you can create tables programmatically using Spark SQL. In Databricks, tables are metadata objects stored in the hive metastore, while the underlying data is maintained in Delta format within Databricks File System (DBFS) storage.
 
 ## Task 5: Create a query
 

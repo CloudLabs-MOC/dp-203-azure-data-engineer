@@ -119,7 +119,7 @@ In this task, you will create a cluster in the Azure Databricks Portal.
 1. In the **Create new compute** page, provide the following details:
 
     - **Compute name (1)**: Keep the **default** value  
-    - **Databricks runtime (2)**: Select **13.3 LTS**  
+    - **Databricks runtime (2)**: Select **17.3 LTS**  
     - **Preferred node type (3)**: Select **Standard_DS3_v2**  
     - **Single node (4)**: Select  
     - **Terminate after (5)**: Enter **30** minutes  
@@ -159,24 +159,26 @@ In this task, you will use the notebook feature in Azure Databricks, which uses 
     https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs-Azure-Databricks/Allfiles/labs/23/adventureworks/products.csv
     ```
 
-1. In the **Explore products** notebook select **File (1)** and choose **Upload data to DBFS (2)**.
+1. In the **Explore products** notebook select **File (1)** and choose **Import (2)**.
 
     ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g21.png)
 
-1. In the **Upload Data** dialog box, note the **DBFS Target Directory** to where the file will be uploaded. Then select the **Files** area, and upload the **products.csv** file you downloaded to your computer. When the file has been uploaded, select **Next**.
+1. In the **Import** dialog box, upload the **products.csv** file you downloaded to your computer. When the file has been uploaded, select **Import**.
 
     ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g22.png)
 
     ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g23.png)
    
-1. In the **Access files from notebooks** pane, select **PySpark (1)**, click **Copy (2)** to copy the code, and then select **Done (3)**.
+1. Once the file has been uploaded, you will be able to view it in your **workspace.** Right-click the **products.csv file** and select **Full Path** to retrieve the complete file path.
 
    ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g24.png)
    
 1. In the **Explore products** notebook, in the empty code cell, paste the code you copied, which should look similar to this:
 
     ```python
-    df1 = spark.read.format("csv").option("header", "true").load("dbfs:/FileStore/shared_uploads/<inject key="AzureAdUserEmail" enableCopy="false"/>/products.csv")
+    df1 = spark.read.format("csv") \
+    .option("header", "true") \
+    .load("file:/Workspace/Users/<inject key="AzureAdUserEmail" enableCopy="false"/>/products.csv")
     ```
 
 1. Use the **&#9656; Run Cell** to execute the code.
@@ -261,7 +263,7 @@ In this task, you will use the notebook that was created previously and query da
 
     ![](./images/data-brick-gt-lab1-ex1-g38.png)
    
-1. In the sidebar, select the **Catalog (1)** link, and verify that the **products (3)** table has been created in the **default database schema (2)** (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
+1. In the sidebar, select the **Catalog (1)** link, and verify that the **products (6)** table has been created in the **default databricks schema (3)** (which is unsurprisingly named **default**). It's possible to use Spark code to create custom database schemas and a schema of relational tables that data analysts can use to explore data and generate analytical reports.
 
     ![](./images/data-brick-gt-lab1-ex1-g39.png)
 
