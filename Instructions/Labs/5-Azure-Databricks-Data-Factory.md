@@ -143,7 +143,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-6.png)
    
-1. Select **Generate new token(1)** and generate a new token with the comment **Data Factory (2)** and a  lifetime(days) as **90 (3)**, and then click on **Generate (4)**
+1. Select **Generate new token**, create a token with the name **Data Factory (1)**, set the lifetime to **90 days (2)**, choose **Other APIs (3)**, then select the `clusters`, `workspace`, and `jobs` (4) scopes and click **Generate (5)**
 
     ![Create storage by clicking confirm.](./images/24-06-25-l5-7.png)
 
@@ -153,7 +153,7 @@ In this task, you will generate an access token in the Azure Databricks Portal.
 
    ![Create storage by clicking confirm.](./images/24-06-25-l5-9.png)
 
-1. Paste the copied token into a text file so you have it handy for later in this exercise.
+1. Paste the copied token into a your notepad so you have it handy for later in this exercise.
 
 ### Task 3.2: Create a linked service in Azure Data Factory
 
