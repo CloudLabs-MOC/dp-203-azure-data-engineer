@@ -4,12 +4,12 @@
       "Language": "English",
       "Files": [
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/02-GettingStarted.md",
+          "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/02-GettingStarted.md",
           "Order": 1
         },
   
         {
-          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/2-Spark-nobook-in-Synapse-Pipeline.md",
+          "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/2-Spark-nobook-in-Synapse-Pipeline.md",
           "Order": 2
         }
       ]
