@@ -4,12 +4,12 @@
       "Language": "English",
       "Files": [
         {
-          "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/04-GettingStarted.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/04-GettingStarted.md",
           "Order": 1
         },
   
         {
-          "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/4-Synapse-link-sql.md",
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs/Instructions/Labs/4-Synapse-link-sql.md",
           "Order": 2
         }
       ]
