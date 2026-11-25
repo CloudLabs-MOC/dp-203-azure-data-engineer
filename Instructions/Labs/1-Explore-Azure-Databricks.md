@@ -153,7 +153,7 @@ In this task, you will use the notebook feature in Azure Databricks, which uses 
 
     > **Note**: If the cluster is not running, it may take a minute or so to start.
 
-1. In the **LabVM**, download the following file and save it as **products.csv**.
+1. In the **LabVM**, open a new browser tab and navigate to the following URL. Press **Ctrl + S**, browse to the **Downloads** folder, enter **products.csv** as the file name, and select **Save**.
 
     ```
     https://raw.githubusercontent.com/CloudLabs-MOC/dp-203-azure-data-engineer/guidedlabs-Azure-Databricks/Allfiles/labs/23/adventureworks/products.csv
@@ -169,7 +169,8 @@ In this task, you will use the notebook feature in Azure Databricks, which uses 
 
     ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g23.png)
    
-1. Once the file has been uploaded, you will be able to view it in your **workspace.** Right-click the **products.csv file** and select **Full Path** to retrieve the complete file path.
+1. Once the file has been uploaded, you will be able to view it in your **Workspace**. Right-click the **products.csv (1)** file, select **Copy URL/path (2)**, and then select **Full path (3)** to copy the complete file path.
+
 
    ![Create storage by clicking confirm.](./images/data-brick-gt-lab1-ex1-g24.png)
    
