@@ -92,7 +92,7 @@ To adjust the zoom level for the environment page, click the **A↕: 100%** icon
  
        ![Enter Your Username](../Labs/images/data-brick-gt-lab1-gs-g2.png)
  
-1. Now enter the following password and click on **Sign in**.
+1. Now enter the following Temporary Access Pass and click on **Sign in**.
  
    - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject>
  
