@@ -132,6 +132,8 @@ In this task, you will launch the workspace, and you'll view and start SQL Wareh
 
 In this task, you will be creating a database schema in your Azure Databricks Portal.
 
+> **Note**: Your Azure Databricks workspace uses **Unity Catalog**, and the legacy **hive_metastore** catalog isn't available. You'll create the schema and table in your workspace catalog, which has the same name as your workspace (**databricksxxxxxxx**). The workspace name is shown at the top right of the Azure Databricks portal.
+
 1. Select **SQL Editor** from the left navigation pane.
 
    ![](./images/data-brick-gt4-lab4-ex1-g5.png)
@@ -152,7 +154,7 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 
    > **Note**: The query runs in your workspace catalog, which is selected by default in the catalog drop-down list above the query editor.
   
-1. Use the **&#9658; Run (1000)** button to run the SQL code.
+1. Use the **&#9658; Run all (1000)** button to run the SQL code.
 
    ![](./images/data-brick-gt4-lab4-ex1-g9.png)
 
@@ -160,9 +162,11 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 
    ![](./images/data-brick-gt4-lab4-ex1-g9-1.png)
 
-1. Verify the schema creation by confirming the **Table (1)** section shows **OK**, and then expand **adventureworks (2)** under **databricksxxxxxxx**.
+1. Verify that the **Output (1)** pane shows no error, and then in the **Catalog** pane, expand **adventureworks (2)** under **databricksxxxxxxx**. The schema shows **No data**, because it doesn't contain any tables yet.
 
    ![](./images/data-brick-gt4-lab4-ex1-g10.png)
+
+   > **Note**: If **adventureworks** isn't listed, select the **Refresh** icon at the top of the **Catalog** pane.
 
 You can use the **default** database for your tables, but when building an analytical data store, it's best to create custom databases for specific data.
 
@@ -196,7 +200,7 @@ In this task, you will create a table schema using an external file.
 
    ![](./images/data-brick-gt4-lab4-ex1-g16.png)
 
-Creating a table by importing data from a file is a convenient way to populate a database. Alternatively, you can create tables programmatically using Spark SQL. In Databricks, tables are metadata objects stored in the hive metastore, while the underlying data is maintained in Delta format within Databricks File System (DBFS) storage.
+In Azure Databricks, tables are registered in **Unity Catalog**, and the data of a managed table is stored in Delta format in the storage that Unity Catalog manages for your catalog.
 
 ## Task 5: Create a query
 
@@ -213,7 +217,7 @@ In this task, you will create a query in the AdventureWorks database, which was 
    FROM adventureworks.products; 
    ```
 
-1. Use the **&#9658;Run (1000)** button to run the SQL code.
+1. Use the **&#9658;Run all (1000)** button to run the SQL code.
 
    ![](./images/data-brick-gt4-lab4-ex1-g18.png)
 
@@ -225,13 +229,13 @@ In this task, you will create a query in the AdventureWorks database, which was 
 
 In this task, you will be creating a dashboard to visualize the data of the Products dataset.
 
-1. In the sidebar, select **databricksxxxxxxx > adventureworks > products (2)**.
+1. In the sidebar, select **Catalog (1)**, and then select **databricksxxxxxxx > adventureworks > products (2)**.
 
 1. In the products, select dropdown **Create (3) > Dashboard (4)**
 
    ![](./images/24-06-25-l4-13.png)
 
-1. Verify the dashboard name is updated to **Adventure Works Products**.
+1. Select the dashboard name at the top left, and rename it to **Adventure Works Products**.
 
    ![](./images/data-brick-gt4-lab4-ex1-g21.png)
 
