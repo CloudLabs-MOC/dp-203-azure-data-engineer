@@ -158,11 +158,11 @@ In this task, you will be creating a database schema in your Azure Databricks Po
 
    ![](./images/data-brick-gt4-lab4-ex1-g9.png)
 
-1. If the **Attach an exisitng** window appears, review the **SQL warehouse** configuration and select **Attach and run** to proceed.
+1. If the **Attach an existing** window appears, review the **SQL warehouse** configuration and select **Attach and run** to proceed.
 
    ![](./images/data-brick-gt4-lab4-ex1-g9-1.png)
 
-1. Verify that the **Output (1)** pane shows no error, and then in the **Catalog** pane, expand **adventureworks (2)** under **databricksxxxxxxx**. The schema shows **No data**, because it doesn't contain any tables yet.
+1. Verify the schema creation by confirming the **Table (1)** section shows **OK**, and then expand **adventureworks (2)** under **databricksxxxxxxx**. The schema shows **No data**, because it doesn't contain any tables yet.
 
    ![](./images/data-brick-gt4-lab4-ex1-g10.png)
 
@@ -273,8 +273,8 @@ Dashboards are a great way to share data tables and visualizations with business
 
 <validation step="0e124d80-b14d-4de2-b75e-47fb394bba8b" />
 
- ## Summary
+## Summary
 
 In this lab, you have performed a series of tasks to work with Azure Databricks. You provisioned an Azure Databricks workspace, viewed and started a SQL Warehouse, created a database and a table, wrote a query, and created a dashboard to visualize your data.
  
- ## You have successfully completed the lab.
+## You have successfully completed the lab.
