@@ -12,7 +12,11 @@ In this lab, you will perform:
 
  - Task 1: Provision an Azure Databricks workspace
  - Task 2: Create a cluster
- - Task 3: Explore data using a notebook
+ - Task 3: Import the notebook and ingest data
+ - Task 4: Load and query data in files
+ - Task 5: Analyze data in a dataframe
+ - Task 6: Query data using Spark SQL
+ - Task 7: Visualize data
 
 ## Task 1: Provision an Azure Databricks workspace
 
@@ -126,11 +130,13 @@ In this task, you will be using the Azure Databricks Portal to create a cluster.
 
     > **Note**: If your cluster fails to start, your subscription may have insufficient quota in the region where your Azure Databricks workspace is provisioned. See [CPU core limit prevents cluster creation](https://docs.microsoft.com/azure/databricks/kb/clusters/azure-core-limit) for details. If this happens, you can try deleting your workspace and creating a new one in a different region. You can specify a region as a parameter for the setup script like this: `./setup.ps1 eastus`
 
-## Task 3: Explore data using a notebook
+## Task 3: Import the notebook and ingest data
 
 As in many Spark environments, Databricks supports the use of notebooks to combine notes and interactive code cells that you can use to explore data.
 
-In this task, you will be importing a notebook to the Azure Databricks Portal.
+In this task, you will import a notebook into your workspace and use it to download sales order data into a Unity Catalog **volume**.
+
+> **Note**: Your Azure Databricks workspace uses **Unity Catalog**, and access to the Databricks file system (DBFS) root is disabled. The notebook stores its files in a volume named **labdata** in the **default** schema of your workspace catalog, at **/Volumes/databricksxxxxxxx/default/labdata**.
 
 1. Select **Workspace (1)** from the left navigation pane, and then choose **Home (2)** under the Workspace section.
 
@@ -140,7 +146,7 @@ In this task, you will be importing a notebook to the Azure Databricks Portal.
 
    ![](./images/data-brick-gt2-lab2-ex1-g2.png)
 
-1. In the **Import** dialog box, select **URL (1)**, enter the provided link in the **URL (2)** field, and then choose **Import (3)**.
+1. In the **Import** dialog box, select **URL (1)**, enter the following link in the **URL (2)** field, and then choose **Import (3)**.
 
     ```
     https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/24/Databricks-Spark.ipynb
@@ -148,9 +154,93 @@ In this task, you will be importing a notebook to the Azure Databricks Portal.
 
    ![](./images/data-brick-gt2-lab2-ex1-g3.png)
 
-1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
+1. Open the **Databricks-Spark** notebook, and in the **Connect** drop-down list at the top right, select your cluster.
+
+    > **Note**: If the cluster is not running, it may take a minute or so to start.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
+
+1. Under **Ingest data**, run the first code cell by selecting **&#9656; Run Cell (1)**. The cell creates the **labdata** volume and downloads three CSV files (**2019.csv**, **2020.csv** and **2021.csv**) into its **data** folder. In the output, note your catalog name, the **data path**, and the **three files (2)**.
+
+    ![](./images/g-4.png)
+
+    ![](./images/g-5.png)
+
+## Task 4: Load and query data in files
+
+In this task, you will load the CSV files into a Spark **dataframe** and apply a schema so that the columns have names and data types.
+
+1. Under **Query data in files**, run the first cell, which loads all the CSV files in the **data** folder into a dataframe. Review the first 100 rows, and note that the columns have generic names such as **_c0** and **_c1** because the files have no header row.
+
+    ![](./images/g-6.png)
+
+1. Run the next cell, which defines **orderSchema** and reloads the files with it. Note that the columns now have names such as **SalesOrderNumber**, **OrderDate** and **CustomerName**.
+
+    ![](./images/g7.png)
+
+1. Run the cell that contains `df.printSchema()` and verify the data type of each column, for example **OrderDate: date** and **UnitPrice: float**.
+
+    ![](./images/g8.png)
+
+## Task 5: Analyze data in a dataframe
+
+In this task, you will filter, aggregate and group the sales data by using dataframe methods.
+
+1. Under **Filter a dataframe**, run the first cell. It selects the **CustomerName** and **Email** columns, and prints the total number of order records and the number of distinct customers.
+
+   ![](./images/g10.png)
+
+1. Run the next cell, which chains the **select** and **where** methods to return only the customers who ordered the **Road-250 Red, 52** product. Compare the counts with the previous cell.
+
+    ![](./images/g-9.png)
+
+1. Under **Aggregate and group data in a dataframe**, run the cell that contains `groupBy("Item").sum()` to view the total quantity sold for each product.
+
+1. Run the next cell to view the number of sales orders per year. Note how the **year** function and the **alias** method create a **Year** column that the data is grouped and sorted by.
+
+   ![](./images/g11.png)
+
+## Task 6: Query data using Spark SQL
+
+In this task, you will query the dataframe with SQL, both from Python code and directly in a SQL cell.
+
+1. Under **Use Spark SQL in PySpark code**, run the cell that contains `df.createOrReplaceTempView("salesorders")`. It saves the dataframe as a temporary view named **salesorders** and queries it with **spark.sql**.
+
+1. Under **Run SQL code in a cell**, run the cell that begins with **`%sql` (1)**. It returns the **gross revenue for each year (2)** from the **salesorders** view.
+
+    ![](./images/g-8.png)
+
+## Task 7: Visualize data
+
+In this task, you will chart the sales data by using the built-in notebook visualizations and the **matplotlib** and **seaborn** Python libraries.
+
+1. Under **View results as a visualization**, run the cell that contains `SELECT * FROM salesorders`.
+
+1. Above the table of results, select **+ (1)** and then select **Visualization (2)**.
+
+    ![](./images/g12.png)
+
+1. In the **Visualization Editor**, configure the following:
+
+    - **Visualization type (1)**: Select **Bar**
+    - **X column (2)**: Select **Item**
+    - **Y columns**: Select **Add column (3)**, and choose **Quantity (4)**
+    - **Aggregation (5)**: Select **Sum**
+    - Select **Save (6)**.
+
+        ![](./images/g13.png)
+
+1. Review the bar chart of the total quantity sold for each product, which now appears under the cell.
+
+1. Under **Get started with matplotlib**, run the cell that builds the **df_spark** dataframe of gross revenue by year, and then run the next cell to plot it as a bar chart.
+
+1. Run the next three cells to customize the chart: add a title, axis labels and grid lines, set the figure size, and then place a bar chart and a pie chart side by side as subplots.
+
+    ![](./images/g15.png)
+
+1. Under **Use the seaborn library**, run the remaining three cells to create a bar chart, apply the **whitegrid** theme, and display the yearly revenue as a line chart.
+
+    ![](./images/g16.png)
    
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
@@ -161,7 +251,7 @@ In this task, you will be importing a notebook to the Azure Databricks Portal.
 
 ## Summary
 
-In this lab, you have performed essential tasks to get started with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, and explored data using a notebook to gain insights and perform analyses.
+In this lab, you have performed essential tasks to get started with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, ingested sales data into a Unity Catalog volume, loaded it into a dataframe with a schema, filtered, aggregated and grouped it, queried it with Spark SQL, and visualized it with built-in charts, matplotlib and seaborn.
 
 ## You have successfully completed the lab.
  
