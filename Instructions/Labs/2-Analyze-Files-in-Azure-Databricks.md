@@ -136,6 +136,8 @@ As in many Spark environments, Databricks supports the use of notebooks to combi
 
 In this task, you will import a notebook into your workspace and use it to download sales order data into a Unity Catalog **volume**.
 
+> **Note**: Your Azure Databricks workspace uses **Unity Catalog**, and access to the Databricks file system (DBFS) root is disabled. The notebook stores its files in a volume named **labdata** in the **default** schema of your workspace catalog, at **/Volumes/databricksxxxxxxx/default/labdata**.
+
 1. Select **Workspace (1)** from the left navigation pane, and then choose **Home (2)** under the Workspace section.
 
    ![](./images/data-brick-gt2-lab2-ex1-g1.png)
@@ -144,7 +146,7 @@ In this task, you will import a notebook into your workspace and use it to downl
 
    ![](./images/data-brick-gt2-lab2-ex1-g2.png)
 
-1. In the **Import** dialog box, select **URL (1)**, enter the provided link in the **URL (2)** field, and then choose **Import (3)**.
+1. In the **Import** dialog box, select **URL (1)**, enter the following link in the **URL (2)** field, and then choose **Import (3)**.
 
     ```
     https://github.com/CloudLabs-MOC/dp-203-azure-data-engineer/raw/guidedlabs-Azure-Databricks/Allfiles/labs/24/Databricks-Spark.ipynb
@@ -152,7 +154,9 @@ In this task, you will import a notebook into your workspace and use it to downl
 
    ![](./images/data-brick-gt2-lab2-ex1-g3.png)
 
-1. Connect the notebook to your cluster, and follow the instructions it contains; run the cells it contains to explore data in files.
+1. Open the **Databricks-Spark** notebook, and in the **Connect** drop-down list at the top right, select your cluster.
+
+    > **Note**: If the cluster is not running, it may take a minute or so to start.
 
    ![Create storage by clicking confirm.](./images/24-06-25-12-3.png)
 
@@ -247,7 +251,7 @@ In this task, you will chart the sales data by using the built-in notebook visua
 
 ## Summary
 
-In this lab, you have performed essential tasks to get started with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, and explored data using a notebook to gain insights and perform analyses.
+In this lab, you have performed essential tasks to get started with Azure Databricks. You provisioned an Azure Databricks workspace, created a cluster, ingested sales data into a Unity Catalog volume, loaded it into a dataframe with a schema, filtered, aggregated and grouped it, queried it with Spark SQL, and visualized it with built-in charts, matplotlib and seaborn.
 
 ## You have successfully completed the lab.
  
