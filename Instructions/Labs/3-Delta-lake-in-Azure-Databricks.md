@@ -157,7 +157,11 @@ In this task, you'll use code in a notebook to explore Delta Lake in Azure Datab
 
  1. Under **Ingest data**, run the first code cell by selecting **&#9656; Run Cell**. The cell creates the **labdata** volume and downloads **products.csv** into it. In the output, note your catalog name, the volume path, and the **products.csv** file.
 
+    ![](./images/a-1.png)
+
 1. Run the next cell to load **products.csv** into a dataframe and display the first 10 rows.
+
+    ![](./images/a-2.png)
 
 ## Task 4: Load data into a Delta table
 
@@ -167,13 +171,21 @@ In this task, you'll save the dataframe in Delta format, update it, and use the 
 
 1. Run the next cell to list the folder contents. Note the Parquet data file and the **_delta_log** folder, which records every change to the data.
 
-1. Run the next cell, which loads the data into a **DeltaTable** object and reduces the **ListPrice** of product **771** by 10%. Note the new price of **3059.991** in the output.
+   ![](./images/a-3.png)
 
-1. Run the next cell to load the Delta folder into a new dataframe, and verify that the update is reflected.
+1. Run the next cell, which loads the data into a **DeltaTable** object and reduces the **ListPrice** of product **771** by 10%. The output shows the row for product **771** with the new price of **3059.991**.
+
+   ![](./images/a-4.png)
+
+1. Run the next cell to load the Delta folder into a new dataframe, and verify that the update is reflected: product **771** shows a price of **3059.991**.
+
+   ![](./images/a-5.png)
 
 1. Run the cell that contains `option("versionAsOf", 0)`. It uses Delta Lake *time travel* to show the original data, in which product **771** still has a price of **3399.99**.
 
 1. Run the cell that contains `deltaTable.history(10)` to view the history of changes: a **WRITE** at version **0** and an **UPDATE** at version **1**.
+
+   ![](./images/a-6.png)
 
 ## Task 5: Create catalog tables
 
@@ -185,6 +197,8 @@ In this task, you'll query the Delta files directly by path, and then create a *
 
 1. Under **Create a managed table**, run the cell that creates the **AdventureWorks** schema and the **ProductsManaged** table. In the output, note that the **Type** is **MANAGED** and that the **Location** is an **abfss://** path in the storage that Unity Catalog manages for your catalog.
 
+    ![](./images/a-7.png)
+
 1. Run the next `%sql` cell to query the **ProductsManaged** table by name.
 
 ## Task 6: Compare managed tables and Delta files
@@ -195,9 +209,13 @@ In this task, you'll drop the managed table and compare what happens to its data
 
 1. Run the cell that contains the `DROP TABLE` statement. Note that **ProductsManaged** is no longer listed. Unity Catalog deletes the data files of a dropped managed table for you.
 
+    ![](./images/a-8.png)
+
 1. Run the next cell to list the **products-delta** folder, and verify that the Delta files in the volume are still there.
 
-1. Run the next two cells to create a managed **Products** table from the Delta files and query it. Note that product **771** has the updated price, because the table was created from the current version of the Delta files.
+1. Run the next two cells to create a managed **Products** table from the Delta files and query it. Scroll to the last row, and note that product **771** has the updated price, because the table was created from the current version of the Delta files.
+
+   ![](./images/a-9.png)
 
 ## Task 7: Use Delta tables for streaming data
 
@@ -207,13 +225,19 @@ In this task, you'll use a Delta table as a *sink* for a stream of simulated IoT
 
 1. Run the next cell to create a stream that reads JSON files from the **device_stream** folder.
 
+    ![](./images/a-12.png)
+
 1. Run the next cell to start writing the stream to a managed Delta table named **IotDeviceData**.
+
+    ![](./images/a-10.png)
 
     > **Note**: The stream keeps running in the background until you stop it, so the cell continues to show **Interrupt** and a stream status panel. This is expected. Don't select **Interrupt**; continue with the next step.
 
 1. Wait a few seconds, and then run the next `%sql` cell to query the **IotDeviceData** table. It contains **9** rows.
 
 1. Run the cell that adds **devices2.json** to the stream folder. Wait a few seconds, and then run the next `%sql` cell. Verify that the table now contains **16** rows, including the new device records.
+
+   ![](./images/a-11.png)
 
 1. Run the last cell, `deltastream.stop()`, to stop the stream.
 
