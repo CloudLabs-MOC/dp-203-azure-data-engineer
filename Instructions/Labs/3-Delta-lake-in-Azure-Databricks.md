@@ -154,7 +154,7 @@ In this task, you'll use code in a notebook to explore Delta Lake in Azure Datab
 
     > **Note**: If the cluster restarts during the lab, run the first code cell under **Ingest data** again before you continue, so that the notebook variables are set again.
 
-   ![Create storage by clicking confirm.](./images/a-13.png)
+   ![](./images/a-13.png)
 
 1. Under **Ingest data**, run the first code cell by selecting **&#9656; Run Cell**. The cell creates the **labdata** volume and downloads **products.csv** into it. In the output, note your catalog name, the volume path, and the **products.csv** file.
 
